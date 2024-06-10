@@ -100,9 +100,21 @@ The data used in this project is sourced from:
 ### Queries and Analysis
 
 The project includes several predefined queries to analyze the data:
-- `daily_cases.sql`: Retrieves the number of daily new cases.
-- `total_deaths.sql`: Calculates the total number of deaths.
-- `recoveries_by_region.sql`: Summarizes recoveries by region.
+- `Comparison of Total Cases and Total Deaths & Evaluating the likelihood of death upon contracting COVID-19 in Egypt`: In Egypt, the total number of deaths stands at 24,826 out of 515,970 total reported cases, yielding a mortality rate of approximately 4.8%. Understanding this statistic aids in assessing the severity of the COVID-19 situation in Egypt and helps policymakers and healthcare professionals allocate resources effectively, implement targeted interventions, and guide public health messaging to mitigate further transmission and reduce mortality rates.
+- `Total Cases vs Population & Probability of Contracting COVID-19 in Egypt`: With a total of 515,970 reported cases and a population of approximately 110,990,096, the probability of contracting COVID-19 stands at 0.46%. Understanding this statistic enables informed decision-making regarding public health measures, resource allocation, and risk assessment, fostering a more effective response to the pandemic.
+- `Countries with the Highest Infection Rates Relative to Their Populations`: 
+1. **Cyprus:** With a maximum total of 658,450 cases and a population of 896,007, the cases ratio stands at 73.49%.
+2. **San Marino:** Reporting 24,132 cases against a population of 33,690, resulting in a cases ratio of 71.63%.
+3. **Austria:** Recording 6,065,711 cases with a population of 8,939,617, the cases ratio reaches 67.85%.
+4. **Faeroe Islands:** Noting 34,658 cases and a population of 53,117, the cases ratio is 65.25%.
+5. **Brunei:** With 288,051 cases and a population of 449,002, the cases ratio is 64.15%.
+- `Countries with the Highest Death Rate Compared to Their Population`:
+1. **Peru:** Maximum total deaths - 220,122; Population - 34,049,588; Max death ratio - 0.646%
+2. **Bulgaria:** Maximum total deaths - 38,328; Population - 6,781,955; Max death ratio - 0.565%
+3. **Bosnia** and Herzegovina: Maximum total deaths - 16,337; Population - 3,233,530; Max death ratio - 0.505%
+4. **Hungary:** Maximum total deaths - 48,762; Population - 9,967,304; Max death ratio - 0.489%
+5. **North Macedonia:** Maximum total deaths - 9,673; Population - 2,093,606; Max death ratio - 0.462%
+
 
 Feel free to modify and expand upon these queries to suit your analysis needs.
 
