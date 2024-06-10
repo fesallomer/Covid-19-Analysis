@@ -67,8 +67,36 @@ The data used in this project is sourced from:
    group by continent
    order by 2 desc 
    ```   
+7. **Global numbers**
+   ```sql
+   select sum(new_cases)as total_cases, sum(new_deaths)as total_deaths,sum(new_deaths)/sum(cast(new_cases as float) )*100
+   from "CovidDeaths"
+   ```   
+8. **The relationship between total population and vaccination rates is a critical factor in public health planning and policy implementation**
+   ```sql
+   select D.continent , D.location , D.population ,max(V.people_vaccinated)as people_vaccinated 
+   from "CovidDeaths" as D
+   join "CovidVaccination" as V 
+   on D.location = V.location 
+   and D.date = V.date 
+   where D.continent is not null 
+   and  V.people_vaccinated is not null
+   group by D.continent , D.location , D.population 
+   ```
+9. **individuals who have received at least one dose of the vaccine vs. individuals who have completed the full vaccination regimen**
+   ```sql
+   select D.continent , D.location , D.population ,max(V.people_vaccinated)as people_vaccinated ,max(v.people_Fully_vaccinated) as people_fully_vacc , (max(v.people_Fully_vaccinated)/max(cast(V.people_vaccinated as float)))*100 as full_vacc_ratio 
+   from "CovidDeaths" as D  
+   join "CovidVaccination" as V 
+   on D.location = V.location  
+   and D.date = V.date  
+   where D.continent is not null 
+   and  V.people_vaccinated is not null 
+   group by D.continent , D.location , D.population 
+   order by 6 desc 
+   ``` 
 
-
+   
 ### Queries and Analysis
 
 The project includes several predefined queries to analyze the data:
