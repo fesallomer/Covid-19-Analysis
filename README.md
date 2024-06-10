@@ -114,6 +114,18 @@ The project includes several predefined queries to analyze the data:
 3. **Bosnia** and Herzegovina: Maximum total deaths - 16,337; Population - 3,233,530; Max death ratio - 0.505%
 4. **Hungary:** Maximum total deaths - 48,762; Population - 9,967,304; Max death ratio - 0.489%
 5. **North Macedonia:** Maximum total deaths - 9,673; Population - 2,093,606; Max death ratio - 0.462%
+- `Global numbers`:
+As of the latest data, the total number of COVID-19 cases globally stands at 3,243,601,078, with a total of 28,937,269 reported deaths, resulting in a death ratio of approximately 0.89%.
+
+Reducing the impact of COVID-19 requires a multifaceted approach:
+
+1. Vaccination: Widespread vaccination campaigns are crucial to achieving herd immunity and reducing transmission rates.
+2. Public Health Measures: Continued adherence to preventive measures such as mask-wearing, hand hygiene, and social distancing can mitigate the spread of the virus.
+3. Healthcare Infrastructure: Strengthening healthcare systems to handle surges in cases and provide adequate care for those affected.
+4. Global Cooperation: Collaboration among nations for equitable vaccine distribution and sharing of resources to combat the pandemic on a global scale.
+
+By implementing these strategies collectively, we can mitigate the impact of COVID-19 and work towards overcoming the challenges posed by the pandemic.
+
 
 
 Feel free to modify and expand upon these queries to suit your analysis needs.
