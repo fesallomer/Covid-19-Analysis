@@ -21,30 +21,55 @@ The data used in this project is sourced from:
 
 ### Running Queries
 
-You can run the provided SQL queries to perform various analyses. Here are a few examples:
-
-1. **Daily Cases:**
+1. **Data we are using:**
    ```sql
-   USE covid19;
-   GO
-   \i sql/queries/daily_cases.sql
+   select location , date , total_cases , new_cases ,total_deaths , population from "CovidDeaths"
+   where continent is not null
+   order by 1,2 
    ```
 
-2. **Total Deaths:**
+2. **Comparison of Total Cases and Total Deaths & Evaluating the likelihood of death upon contracting COVID-19 in Egypt**
    ```sql
-   USE covid19;
-   GO
-   \i sql/queries/total_deaths.sql
+   select location , date , total_cases ,total_deaths ,COALESCE((total_deaths/CAST(total_cases AS FLOAT))*100,0) as Death_ratio
+   from "CovidDeaths"
+   where location like 'Egypt%'
+   order by 5 desc
    ```
 
-3. **Recoveries by Region:**
+3. **Total Cases vs Population & Probability of Contracting COVID-19 in Egypt**
    ```sql
-   USE covid19;
-   GO
-   \i sql/queries/recoveries_by_region.sql
+   select location , date , total_cases , population , COALESCE((total_cases/CAST(population AS FLOAT))*100,0) as Cases_ratio
+   from "CovidDeaths"
+   where location like 'Egypt%'
+   order by 5 desc 
    ```
+4. **Countries with the Highest Infection Rates Relative to Their Populations**
+   ```sql
+   select location , max(total_cases)as max_total_cases , population , max(COALESCE((total_cases/CAST(population AS FLOAT))*100,0)) as max_Cases_ratio
+   from "CovidDeaths"
+   where continent is not null
+   group by location , population
+   order by 4 desc 
+   ```
+5. **Countries with the Highest Death Rate Compared to Their Population**
+   ```sql
+   select location , max(total_deaths)as max_total_deaths , population , max(COALESCE((total_deaths/CAST(population AS FLOAT))*100,0)) as max_death_ratio
+   from "CovidDeaths"
+   where continent is not null 
+   group by location , population 
+   order by 4 desc
+   ```
+6. **continent with the highest death rate attributable to COVID-19**
+   ```sql
+   select continent , max(total_deaths)as max_total_deaths
+   from "CovidDeaths" 
+   where continent is not null
+   group by continent
+   order by 2 desc 
+   ```   
 
-## Queries and Analysis
+
+### Queries and Analysis
 
 The project includes several predefined queries to analyze the data:
 - `daily_cases.sql`: Retrieves the number of daily new cases.
